@@ -1,0 +1,15 @@
+{
+  "users":[
+    {
+  "id": "sk",
+  "name": "admin",
+  "password": "admin",
+  "email": "email@email.com",
+  "phone": "56778889989",
+  "country": "singapore",
+  "address": "address1\naddrees2",
+  "role": "user",
+  "gender": "male"
+  }
+]
+}

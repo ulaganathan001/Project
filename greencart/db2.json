@@ -1,0 +1,32 @@
+{
+  "product": [
+    {
+      "pname": "Mobile",
+      "pprice": "20000",
+      "pcompany": "Oppo",
+      "paddress": "changepond",
+      "id": 1
+    },
+    {
+      "pname": "dettol soap",
+      "pprice": "50",
+      "pcompany": "dettol",
+      "paddress": "hyderabad",
+      "id": 2
+    },
+    {
+      "pname": "fbr",
+      "pprice": "523",
+      "pcompany": "fdg",
+      "paddress": "sdfgs",
+      "id": 3
+    },
+    {
+      "pname": "eraser",
+      "pprice": "17",
+      "pcompany": "fsv s",
+      "paddress": "changepond",
+      "id": 4
+    }
+  ]
+}

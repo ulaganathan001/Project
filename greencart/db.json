@@ -1,0 +1,108 @@
+{
+  "user": [
+    {
+      "id": "adminuser",
+      "name": "ulaganathan",
+      "password": "admin",
+      "email": "ulaganathan@gmail.com",
+      "phone": "8825890724",
+      "country": "india",
+      "address": "",
+      "role": "developer",
+      "gender": "male"
+    },
+    {
+      "id": "admin",
+      "name": "admin",
+      "password": "admin",
+      "email": "email@email.com",
+      "phone": "56778889989",
+      "country": "singapore",
+      "address": "address1\naddrees2",
+      "role": "user",
+      "gender": "male"
+    },
+    {
+      "id": "ulaganathan",
+      "name": "Ulaganathan",
+      "password": "ulaganathan",
+      "email": "123@gmail.com",
+      "phone": "8825890724",
+      "country": "india",
+      "address": "",
+      "gender": "male"
+    },
+    {
+      "id": "spartans",
+      "name": "spartans",
+      "password": "spartans",
+      "email": "sp@gmail.com",
+      "phone": "5678",
+      "country": "india",
+      "address": "",
+      "gender": "male"
+    },
+    {
+      "id": "santhosh",
+      "name": "santhosh kumar",
+      "password": "santhosh",
+      "email": "sabngjgdgj@gmail.com",
+      "phone": "9500316272",
+      "country": "india",
+      "address": "sacecdvdvv",
+      "gender": "male"
+    }
+  ],
+  "roleaccess": [
+    {
+      "role": "admin",
+      "menu": "customer",
+      "haveadd": true,
+      "haveedit": true,
+      "havedelete": true
+    },
+    {
+      "role": "admin",
+      "menu": "supplier",
+      "haveadd": true,
+      "haveedit": true,
+      "havedelete": true
+    },
+    {
+      "role": "user",
+      "menu": "customer",
+      "haveadd": false,
+      "haveedit": false,
+      "havedelete": false
+    },
+    {
+      "role": "user1",
+      "menu": "customer",
+      "haveadd": false,
+      "haveedit": false,
+      "havedelete": false
+    }
+  ],
+  "customer": [
+    {
+      "code": 1,
+      "name": "ulaganathan",
+      "email": "123@gmail.com"
+    },
+    {
+      "code": 2,
+      "name": "santhosh",
+      "email": "1234@gmail.com"
+    },
+    {
+      "code": 3,
+      "name": "parthasarathy",
+      "email": "partha@gmail.com"
+    },
+    {
+      "code": 4,
+      "name": "siva",
+      "email": "siva@gmail.com"
+    }
+  ]
+}

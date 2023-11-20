@@ -1,0 +1,43 @@
+:root{
+    --background: #ffeec8;
+    --text-color:   green;
+}
+.header{
+    background-color: var(--background);
+}
+.menu-color{
+    color:var(--text-color);
+    font-weight: 500;
+    font-size: 20px;
+}
+.header img{
+    width: 150px;
+    height: 60px;
+}
+.hero-container, footer{
+    background-color: var(--background);
+}
+.hero-text h1 span, .hero-text p{
+    color: var(--text-color);
+}
+.delivery-process h5, .healthy h5{
+    color: var(--text-color);
+}
+.healthy{
+    background-color: var(--background);
+}
+
+.card{
+  
+    padding: 5px;
+}
+.bg-green {
+    background-color: #4B6F44; /*#fac204  FAC81D #ffc107*/
+}
+.search-form {
+    width: 500px; 
+}  
+.footer{
+    background-color: #4B6F44;
+    color: white;
+}
