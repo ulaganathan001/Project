@@ -11,7 +11,7 @@ const Customer = () => {
   }, []);
 
   const fetchData = () => {
-    axios.get(`http://localhost:80/customer`)
+    axios.get(` http://localhost:8000/customer1`)
       .then((res) => {
         setCustomers(res.data);
       })
@@ -22,7 +22,7 @@ const Customer = () => {
 
   const deleteCustomer = (id) => {
     if (window.confirm(`Are you sure to delete customer with id: ${id}`)) {
-      axios.delete(`http://localhost:80/customer/${id}`)
+      axios.delete(` http://localhost:8000/customer1/${id}`)
         .then(() => {
           window.alert("Customer Deleted Successfully");
           fetchData();

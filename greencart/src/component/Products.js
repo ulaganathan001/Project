@@ -10,7 +10,7 @@ const Products = () => {
   }, []);
 
   const fetchData = () => {
-    axios.get("http://localhost:8/product")
+    axios.get("http://localhost:8000/product")
       .then((res) => {
         setProducts(res.data);
       })
@@ -21,7 +21,7 @@ const Products = () => {
 
   const deleteProduct = (id) => {
     if (window.confirm(`Are you sure to delete product with id: ${id}`)) {
-      axios.delete(`http://localhost:8/product/${id}`)
+      axios.delete(`http://localhost:8000/product/${id}`)
         .then(() => {
           window.alert("Product Deleted Successfully");
           fetchData();

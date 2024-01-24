@@ -81,6 +81,7 @@ function Routing() {
               <Route path='home' element={<Home />} />
               <Route path='contact' element={<Contact />} />
               <Route path='product' element={<Product />} />
+              
               <Route path='about' element={<About />} />
 
             </Route>

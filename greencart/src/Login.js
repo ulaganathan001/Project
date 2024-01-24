@@ -35,6 +35,7 @@ const Login = () => {
             }).catch((err) => {
                 toast.error('Login Failed due to :' + err.message);
             });
+            
         }
     }
 

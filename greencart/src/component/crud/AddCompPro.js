@@ -58,7 +58,7 @@ const AddCompPro = () => {
     event.preventDefault();
 
     if (validateForm()) {
-      axios.post("http://localhost:8/product", product)
+      axios.post("http://localhost:8000/product", product)
         .then(() => {
           window.alert("Product added successfully");
           navigate("/pro");

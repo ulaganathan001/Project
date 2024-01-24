@@ -15,7 +15,7 @@ const AddCompCus = () => {
     event.preventDefault();
 
     if (validateForm()) {
-      axios.post("http://localhost:80/customer", customer)
+      axios.post(" http://localhost:8000/customer1", customer)
         .then(() => {
           window.alert("Customer added Successfully");
           navigate("/cus");

@@ -2,8 +2,13 @@ import React from 'react';
 import Logo from '../assets/Images/HeaderLogo.png';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Link } from "react-router-dom";
+import { useState } from 'react';
 
 const Navbar = () => {
+
+        
+      
+       
     return (
         <div className="container-fluid px-5 header sticky-top">
             <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom ">
@@ -25,20 +30,23 @@ const Navbar = () => {
                 </ul>
 
                 <div className="col-md-3 text-end">
-                    
+
                     <Dropdown>
-                        <Dropdown.Toggle  variant=""  >
-                        <i className="bi bi-person fs-2  text-success "></i>
+                        <Dropdown.Toggle variant=""  >
+                            <i className="bi bi-person fs-2  text-success "></i>
                         </Dropdown.Toggle>
 
-                        <Dropdown.Menu style={{background: '#ffeec8'}}>
-                          <Dropdown.Item href="/login">Userlogin</Dropdown.Item>
+                        <Dropdown.Menu style={{ background: '#ffeec8' }}>
+                            <Dropdown.Item href="/login">Userlogin</Dropdown.Item>
                             <Dropdown.Item href="ad">Adminlogin</Dropdown.Item>
-                            
+
                         </Dropdown.Menu>
-                        {/* <Link to={'ad'} className='btn'><i className="bi bi-cart fs-3 text-success">(0)</i></Link> */}
+                        <Link className='btn'><i className="bi bi-cart fs-3 text-success">(0)</i>
+                            
+
+                        </Link>
                     </Dropdown>
-                   
+
                 </div>
             </header>
         </div>

@@ -14,7 +14,7 @@ const EditCompCus = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:80/customer/${id}`).then((res) => {
+    axios.get(` http://localhost:8000/customer1/${id}`).then((res) => {
       setCustomer(res.data);
     }).catch((err) => { });
   }, [id]);
@@ -28,7 +28,7 @@ const EditCompCus = () => {
     event.preventDefault();
 
     if (validateForm()) {
-      axios.put(`http://localhost:80/customer/${id}`, customer).then(() => {
+      axios.put(` http://localhost:8000/customer1/${id}`, customer).then(() => {
         window.alert("Customer Updated successfully");
         navigate("/cus");
       }).catch((err) => { });

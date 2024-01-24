@@ -5,6 +5,7 @@ import PCatagory3 from './Components/PCatagory3'
 import PCatagory4 from './Components/PCatagory4'
 import PCatagory5 from './Components/PCatagory5'
 
+
 export default function Product() {
     return (
         <>
@@ -13,6 +14,7 @@ export default function Product() {
             <PCatagory3/>
             <PCatagory4/>
             <PCatagory5/>
+            {/* <AddtoCart></AddtoCart> */}
             
         </>
     )

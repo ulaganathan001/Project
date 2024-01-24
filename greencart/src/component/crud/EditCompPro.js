@@ -16,7 +16,7 @@ const EditCompPro = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:8/product/${id}`)
+    axios.get(`http://localhost:8000/product/${id}`)
       .then((res) => {
         setProduct(res.data);
       })
@@ -69,7 +69,7 @@ const EditCompPro = () => {
     event.preventDefault();
 
     if (validateForm()) {
-      axios.put(`http://localhost:8/product/${id}`, product)
+      axios.put(`http://localhost:8000/product/${id}`, product)
         .then(() => {
           window.alert("Product Updated successfully");
           navigate("/pro");
