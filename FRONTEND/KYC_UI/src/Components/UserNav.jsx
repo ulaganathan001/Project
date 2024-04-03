@@ -6,7 +6,7 @@ import { clearInformation } from '../features/information';
 import { useNavigate } from 'react-router-dom';
 
 function UserNav() {
-    const [name, setName] = useState(localStorage.getItem('user_Name'));
+    const [name] = useState(localStorage.getItem('user_Name'));
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
