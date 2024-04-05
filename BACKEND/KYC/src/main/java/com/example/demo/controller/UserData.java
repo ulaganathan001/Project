@@ -1,10 +1,8 @@
 package com.example.demo.controller;
 
-import java.io.IOException;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,6 +16,7 @@ import com.example.api.model.GetUserModel;
 import com.example.api.model.UserDataModel;
 import com.example.demo.service.ServiceImp;
 
+import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -25,14 +24,13 @@ import lombok.RequiredArgsConstructor;
 @CrossOrigin(origins = "http://localhost:5173")
 public class UserData implements UserInformationApi {
 
-	@Autowired
+	@Resource
 	private ServiceImp ser;
 	
 	@Override
 	public ResponseEntity<String> registerUser(UserDataModel userDataModel) {
 		String result=ser.addData(userDataModel);
-        ResponseEntity<String> responseEntity = new ResponseEntity<>(result, HttpStatus.CREATED);
-        return responseEntity;
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
 	}
 
 	@Override
@@ -56,8 +54,7 @@ public class UserData implements UserInformationApi {
 	public ResponseEntity<List<GetAllInnerModel>> getAll() {
 		
         List<GetAllInnerModel> result=ser.getAll();
-        ResponseEntity<List<GetAllInnerModel>> responseEntity=new ResponseEntity<>(result, HttpStatus.OK);
-        		return responseEntity;
+        		return new ResponseEntity<>(result, HttpStatus.OK);
     }
     
 	
@@ -72,14 +69,8 @@ public class UserData implements UserInformationApi {
     	      return new ResponseEntity<>("file is empty",HttpStatus.BAD_GATEWAY);
     	    }
 
-    	 try {
-			result=ser.storeFile(userId, currentAddress, documentType, file);
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-		}
-    	 ResponseEntity<String> responseEntity = new ResponseEntity<>(result,HttpStatus.CREATED);
-          return responseEntity;
+    	 result=ser.storeFile(userId, currentAddress, documentType, file);
+          return new ResponseEntity<>(result,HttpStatus.CREATED);
 		
 
 	}
@@ -88,8 +79,7 @@ public class UserData implements UserInformationApi {
 	public ResponseEntity<List<GetAllUploadsInnerModel>> getAllUploads() {
 		
         List<GetAllUploadsInnerModel> result=ser.getAllFile();
-        ResponseEntity<List<GetAllUploadsInnerModel>> responseEntity=new ResponseEntity<>(result, HttpStatus.OK);
-        		return responseEntity;
+        		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 
 	

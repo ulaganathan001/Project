@@ -22,16 +22,12 @@ public class UserDetails {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer user_Id; 
-	private String user_Name;
+	private Integer userId; 
+	private String userName;
 	private String email;
 	private String password;
 	
-	@Override
-	public String toString() {
-		return "UserDetails [user_Id=" + user_Id + ", user_Name=" + user_Name + ", email=" + email + ", password="
-				+ password + "]";
-	}
+	
 	
 	
 	

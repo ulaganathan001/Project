@@ -1,13 +1,10 @@
 package com.example.demo.service;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,32 +12,30 @@ import com.example.api.model.GetAllInnerModel;
 import com.example.api.model.GetAllUploadsInnerModel;
 import com.example.api.model.GetUserModel;
 import com.example.api.model.UserDataModel;
-import com.example.demo.Repository.KycRepo;
-import com.example.demo.Repository.UserRepo;
 import com.example.demo.entity.DTO;
 import com.example.demo.entity.UserDetails;
 import com.example.demo.mapper.Intermediate;
+import com.example.demo.repository.KycRepo;
+import com.example.demo.repository.UserRepo;
 
-
+import jakarta.annotation.Resource;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-
+import java.util.logging.Logger;
 
 @Service
 @RequiredArgsConstructor
 public class ServiceImp {
 
-	@Autowired
+	@Resource
 	private KycRepo krepo;
-	@Autowired
+	@Resource
 	private UserRepo repo;
 	
-	@Autowired
+	@Resource
 	private Intermediate in;
 	
-	
-	public String filex;
-	
+	Logger logger = Logger.getLogger(getClass().getName());
 
 	@Transactional
 	public String addData(UserDataModel userDataModel) {
@@ -49,6 +44,11 @@ public class ServiceImp {
 		String username=userDataModel.getUserName();
 		String email=userDataModel.getEmail();
 		String password=userDataModel.getPassword();
+		
+		 int emailExists = repo.checkEmailExists(email);
+	        if (emailExists == 1) {
+	            return "Email already exists. Failed to add user.";
+	        }
 		
 		int result=repo.addData(username,email,password);
 		
@@ -66,12 +66,9 @@ public class ServiceImp {
 	public GetUserModel getData(String email) {
 		UserDetails userdata=repo.getUserData(email);
 		if (userdata == null) {
-		    System.out.println( new GetUserModel());
 		    return new GetUserModel();
 		   
-		} else {
-		    System.out.println("User data found: " + userdata);
-		}
+		} 
 		return in.constructUserModel(userdata);		
 	}
 
@@ -84,38 +81,19 @@ public class ServiceImp {
 
 
 	@Transactional
-	public String storeFile(Integer userId, String currentAddress, String documentType, MultipartFile file) throws IOException {
-		
-		
-		
-	    byte[] fileContent = file.getBytes();
-	    
-		File directory = new File("./File" + userId);
-		if (!directory.exists()) {
-		    directory.mkdir();
-		}
-		
-		String fileName = file.getOriginalFilename();
-		Path filePath = Paths.get("File" + userId + "/" + fileName);
-		System.out.println(fileName);
-		
-//		int lastDotIndex = fileName.lastIndexOf('.');
-//        
-//         filex = (lastDotIndex != -1) ? fileName.substring(lastDotIndex) : "";
-//        
-//        System.out.println("File extension: " + filex);
-
-		
-		int ans= krepo.kyc_details_update(userId.intValue(), currentAddress, documentType, fileContent,fileName);
-		if(ans==1) {
-			return "success" ;
-		}
-		else{
-			return "failed" ;
-		}
-		
+	public String storeFile(Integer userId, String currentAddress, String documentType, MultipartFile file) {
+	    try {
+	        byte[] fileContent = file.getBytes();
+	        String fileName = file.getOriginalFilename();
+	        
+	        krepo.kyc_details_update(userId, currentAddress, documentType, fileContent,fileName);
+	        
+	        return "added successfully";
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        return "error storing file";
+	    }
 	}
-	
 	
 
 	public List<GetAllUploadsInnerModel> getAllFile() {
@@ -132,7 +110,7 @@ public class ServiceImp {
 	    }
 	    
 	    if (result == null) {
-	        return null;
+	        return Collections.emptyList();
 	    }
 	    return in.constructUploadFiles(kycDetailsList);
 	}

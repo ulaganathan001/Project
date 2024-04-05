@@ -1,4 +1,4 @@
-package com.example.demo.Repository;
+package com.example.demo.repository;
 
 
 import java.util.List;
@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.entity.UserDetails;
 
@@ -30,6 +29,14 @@ public interface UserRepo extends CrudRepository<UserDetails, Integer>  {
 	@Query("SELECT u FROM UserDetails u")
 	List<UserDetails> getAll();
 
+
+
+	@Query(value = "SELECT COUNT(*) FROM user_details WHERE email = :email", nativeQuery = true)
+    int checkEmailExists(@Param("email") String email);
+
+
+
+	
 
 	
 

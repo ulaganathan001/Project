@@ -1,6 +1,5 @@
 package com.example.demo.entity;
 
-import java.util.Arrays;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,20 +23,15 @@ public class KycDetails {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Integer kyc_id;
-	private String current_address;
-	private String documents_type;
+	private Integer kycId;
+	private String currentAddress;
+	private String documentsType;
 	@Lob
 	@Column(name = "path", columnDefinition = "bytea")
 	private byte[] path;
-	private Integer user_id;
-	private String Extension;
+	private Integer userId;
+	private String extension;
 
-	@Override
-	public String toString() {
-		return "KycDetails [kyc_id=" + kyc_id + ", current_address=" + current_address + ", documents_type="
-				+ documents_type + ", path=" + Arrays.toString(path) + ", user_id=" + user_id + ", Extension="
-				+ Extension + "]";
-	}
+	
 	
 }

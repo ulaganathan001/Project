@@ -19,13 +19,13 @@ public class DTO {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer kyc_id;
-	private Integer user_id;
-	private String user_name;
+	private Integer kycId;
+	private Integer userId;
+	private String userName;
 	private String email;
 	private String extension;
-	private String current_address;
-	private String documents_type;
+	private String currentAddress;
+	private String documentsType;
 	
 	private String path;
 	
