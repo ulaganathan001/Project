@@ -1,0 +1,240 @@
+.user-form{
+  text-align: center;
+  border: 5px solid white;
+  height:470px;
+  background-color: white;
+  width: 440px;
+  margin-left: 600px;
+  margin-top: 100px;
+  border-radius: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.edit{
+  height: 30px;
+  width: 75px;
+  color: white;
+  background-color: rgba(59, 128, 207, 0.849);
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+  
+}
+.delete{
+  margin-left: 30px;
+  height: 30px;
+  width: 75px;
+  color: white;
+  background-color:  red;
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+
+}
+
+.update{
+  height: 32px;
+  width: 80px;
+  color: white;
+  background-color: rgb(4, 145, 226);
+  border: none;
+  font-weight: bold;
+}
+.cancel{
+  border: none;
+  height: 32px;
+  width: 80px;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.568);
+  font-weight: bold;
+}
+.adduser{
+  margin-left: 700px;
+}
+.export{
+  height: 50px;
+  width: 100px;
+  margin-left: 630px;
+}
+
+.heading{
+  font-size: 100px;
+  margin-left: 440px;
+}
+.nav{
+  color: black;
+}
+
+.form {
+  text-align: center;
+  border-radius: 15px;
+  width: 370px;
+  margin-left: 580px;
+  margin-top: 150px;
+  background-color: white;
+  padding-bottom: 50px;
+
+}
+
+ .App{
+  background-image: url('https://png.pngtree.com/background/20220726/original/pngtree-abstract-white-modern-seamless-white-background-picture-image_1826102.jpg');
+  background-repeat: 'no-repeat';
+  background-position: 345%;
+  opacity: 1.5;
+  height: 789px;
+  width: 1600px;
+
+} 
+.signInBt{
+  color: white;
+  background-color: #6A9D67;
+  size: 10px;
+  border: none;
+  font-size: large;
+  border-radius: 3px;
+}
+.resetBt{
+  color: white;
+  background-color: darkcyan;
+  size: 10px;
+  border: none;
+  font-size: large;
+  border-radius: 3px;
+}
+.heading{
+   color: white;
+   margin-right: 500px;
+   text-align: center;
+   margin-top: 200px;
+}
+
+
+.kycForm{
+  text-align: center;
+  width: 500px;
+  height: 420px;
+  margin-left: 550px;
+  margin-top: 70px;
+  padding-top: 50px;
+  background-color: white;
+  border-radius: 10px;
+  
+}
+.uploadButton{
+  width: 100px;
+  height: 40px;
+  background-color: #377dff;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  border: white;
+  border-radius: 5px;
+  margin-top: -1900px;
+}
+
+.chooseFile{
+ font-size: large;
+ height: 100px; 
+ width: 300px;
+ color: #377dff;
+ margin-left: 90px;
+}
+
+.docStyle{
+  margin-left: 30px;
+  height: 38px;
+  width: 180px;
+}
+
+.proofStyle{
+  height: 38px;
+  width: 180px;
+}
+
+
+.sign {
+  font-size: 25px;
+}
+.accordian {
+  margin-right: 90px;
+  margin-bottom: 750px;
+  margin-top: 300px;
+  width: 300px;
+  border: 1px solid rgb(133, 133, 133);
+  margin-left: 1400px;
+
+}
+.accordian-header {
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 15px;
+  border: 2px solid rgb(133, 133, 133);
+  background-color: rgb(75, 78, 77);
+}
+.accordian-body {
+  color: white;
+  font-size: 20px;
+  padding: 15px 5px;
+  color: black;
+}
+
+.usersList{
+  margin-top: -90px;
+  margin-left: 400px;
+  color:  black;
+
+}
+
+.user-preview{
+
+  padding: 2px 10px;
+  border-bottom: 1px solid black;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.user-preview:hover{
+
+  box-shadow: 1px 3px 5px #6A9D67;
+}
+
+.listOfEmails{
+  font-weight: 50px;
+  margin-left: 10px;
+}
+
+
+.side-menu{
+  width: 200px;
+
+}
+
+.side-menu a{
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.side-menu a:hover {
+  background-color: #ccc;
+}
+
+.side-menu a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.counter{
+  margin-left: 500px; 
+  display: flex;
+  gap: 10px;
+}
+.btCounter{
+
+  height: 50px;
+}
